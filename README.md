@@ -9,7 +9,7 @@
 | email    | string | null: false |
 | password | string | null: false |
 | nickname | string | null: false |
-| realname | string | null: false |
+| familyname | string | null: false |
 | birthday | string | null: false |
 
 ### Association
@@ -26,6 +26,9 @@
 | category      | string | null: false |
 | sales_area    | string | null: false |
 | user          | references | null: false, foreign_key: true |
+| shippingcharge    | string | null: false |
+| daytoship    | string | null: false |
+| condition    | string | null: false |
 
 ### Association
 
@@ -39,6 +42,9 @@
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
 | text   | string     | null: false                    |
+| cardnumber    | string | null: false |
+| expirationdate    | string | null: false |
+| securitycode    | string | null: false |
 
 ### Association
 
@@ -50,6 +56,11 @@
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | address | string     |                                |
+| postalcode   | string | null: false |
+| prefectures   | string | null: false |
+| municipality    | string | null: false |
+| building    | string | null: false |
+| phone   | string | null: false |
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
