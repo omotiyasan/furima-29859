@@ -8,6 +8,9 @@
 | name     | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
+| nickname | string | null: false |
+| realname | string | null: false |
+| birthday | string | null: false |
 
 ### Association
 
@@ -19,8 +22,7 @@
 | Column        | Type   | Options     |
 | ------------- | ------ | ----------- |
 | money         | string | null: false |
-| image         | string | null: false |
-| text          | string | null: false |
+| product       | references | null: false, foreign_key: true |
 | category      | string | null: false |
 | sales_area    | string | null: false |
 | user          | references | null: false, foreign_key: true |
