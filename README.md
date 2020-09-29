@@ -35,7 +35,7 @@
 
 ### Association
 
-- has_many :buys
+- has_one :buys
 - belongs_to :user
 
 
