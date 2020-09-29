@@ -10,6 +10,9 @@
 | password | string | null: false |
 | nickname | string | null: false |
 | familyname | string | null: false |
+| name (furigana)    | string | null: false |
+| familyname(furigana) | string | null: false |
+| birthday | date | null: false |
 
 ### Association
 
@@ -24,6 +27,8 @@
 | productname   | string | null: false |
 | productdescription   | string | null: false |
 | user          | references | null: false, foreign_key: true |
+| salescommission         | string | null: false |
+| salesprofit         | string | null: false |
 
 ### Association
 
@@ -36,10 +41,8 @@
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
+| product   | references | null: false, foreign_key: true |
 | text   | string     | null: false                    |
-| cardnumber    | string | null: false |
-| expirationdate    | string | null: false |
-| securitycode    | string | null: false |
 
 ### Association
 
