@@ -10,8 +10,8 @@
 | password             | string | null: false |
 | nickname             | string | null: false |
 | familyname           | string | null: false |
-| name (furigana)      | string | null: false |
-| familyname(furigana) | string | null: false |
+| name_furigana        | string | null: false |
+| familyname_furigana  | string | null: false |
 | birthday             | date   | null: false |
 
 ### Association
@@ -25,7 +25,7 @@
 | ------------------ | ---------- | ------------------------------ |
 | money              | integer    | null: false                    |
 | name               | string     | null: false                    |
-| description        | string     | null: false                    |
+| description        | text       | null: false                    |
 | user               | references | null: false, foreign_key: true |
 | category_id        | integer    | null: false                    |
 | sales_area_id      | integer    | null: false                    |
@@ -54,13 +54,15 @@
 
 ## deliverys テーブル
 
-| Column           | Type    | Options     |
-| ---------------- | ------- | ----------- |
-| postalcode       | string  | null: false |
-| prefectures_id   | integer | null: false |
-| municipality     | string  | null: false |
-| building         | string  | ------------|
-| phone            | string  | null: false |
+| Column           | Type        | Options                      |
+| ---------------- | ----------- | ---------------------------- |
+| postalcode       | string      | null: false                  |
+| prefectures_id   | integer     | null: false                  |
+| municipality     | string      | null: false                  |
+| block            | string      | null: false                  |
+| building         | string      | -----------------------------|
+| phone            | string      | null: false                  |
+| buy              | references  | null: false foreign_key: true|
 
 ### Association
 
