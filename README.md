@@ -10,7 +10,6 @@
 | password | string | null: false |
 | nickname | string | null: false |
 | familyname | string | null: false |
-| birthday | string | null: false |
 
 ### Association
 
@@ -22,13 +21,9 @@
 | Column        | Type   | Options     |
 | ------------- | ------ | ----------- |
 | money         | string | null: false |
-| product       | references | null: false, foreign_key: true |
-| category      | string | null: false |
-| sales_area    | string | null: false |
+| productname   | string | null: false |
+| productdescription   | string | null: false |
 | user          | references | null: false, foreign_key: true |
-| shippingcharge    | string | null: false |
-| daytoship    | string | null: false |
-| condition    | string | null: false |
 
 ### Association
 
@@ -50,17 +45,22 @@
 
 - belongs_to :user
 - belongs_to :product
+- has_one :delivery
 
 ## deliverys テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| address | string     |                                |
+| address | string     |  null: false |
 | postalcode   | string | null: false |
 | prefectures   | string | null: false |
-| municipality    | string | null: false |
-| building    | string | null: false |
+| municipality    | string | --------- |
+| building    | string | ----------|
 | phone   | string | null: false |
+
+### Association
+
+- belongs_to:buy
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
