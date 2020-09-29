@@ -3,16 +3,16 @@
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| name     | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
-| nickname | string | null: false |
-| familyname | string | null: false |
-| name (furigana)    | string | null: false |
+| Column               | Type   | Options     |
+| -------------------- | ------ | ----------- |
+| name                 | string | null: false |
+| email                | string | null: false |
+| password             | string | null: false |
+| nickname             | string | null: false |
+| familyname           | string | null: false |
+| name (furigana)      | string | null: false |
 | familyname(furigana) | string | null: false |
-| birthday | date | null: false |
+| birthday             | date   | null: false |
 
 ### Association
 
@@ -21,14 +21,17 @@
 
 ## products テーブル
 
-| Column        | Type   | Options     |
-| ------------- | ------ | ----------- |
-| money         | string | null: false |
-| productname   | string | null: false |
-| productdescription   | string | null: false |
-| user          | references | null: false, foreign_key: true |
-| salescommission         | string | null: false |
-| salesprofit         | string | null: false |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| money              | integer    | null: false                    |
+| name               | string     | null: false                    |
+| description        | string     | null: false                    |
+| user               | references | null: false, foreign_key: true |
+| category_id        | integer    | null: false                    |
+| sales_area_id      | integer    | null: false                    |
+| shippingcharge_id  | integer    | null: false                    |
+| daytoship_id       | integer    | null: false                    |
+| condition_id       | integer    | null: false                    |
 
 ### Association
 
@@ -38,11 +41,10 @@
 
 ## buys テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
 | product   | references | null: false, foreign_key: true |
-| text   | string     | null: false                    |
 
 ### Association
 
@@ -52,14 +54,13 @@
 
 ## deliverys テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| address | string     |  null: false |
-| postalcode   | string | null: false |
-| prefectures   | string | null: false |
-| municipality    | string | --------- |
-| building    | string | ----------|
-| phone   | string | null: false |
+| Column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| postalcode       | string  | null: false |
+| prefectures_id   | integer | null: false |
+| municipality     | string  | null: false |
+| building         | string  | ------------|
+| phone            | string  | null: false |
 
 ### Association
 
