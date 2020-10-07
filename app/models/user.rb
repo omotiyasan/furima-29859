@@ -13,5 +13,5 @@ class User < ApplicationRecord
   validates :familyname_furigana, presence: true, format: { with:/[ァ-ン]/}
   validates :birthday, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }
-  validates :password_confirmation, presence: true
+  validates :password, presence: true, format: { with:/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,100}+\z/i }
 end
