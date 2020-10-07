@@ -7,13 +7,19 @@ class User < ApplicationRecord
   has_many :buys
 
   with_options presence: true do
-    validates :name, format: { with:/[ぁ-んァ-ン一-龥]/}
     validates :nickname
-    validates :familyname, format: { with:/[ぁ-んァ-ン一-龥]/}
-    validates :name_furigana, format: { with:/[ァ-ン]/}
-    validates :familyname_furigana, format: { with:/[ァ-ン]/}
     validates :birthday
     validates :email, uniqueness: { case_sensitive: false }
     validates :password, format: { with:/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,100}+\z/i }
+  end
+
+  with_options presence: true, format: { with:/[ぁ-んァ-ン一-龥]/} do
+    validates :name
+    validates :familyname
+  end
+
+  with_options presence: true, format: { with:/[ァ-ン]/} do
+    validates :name_furigana
+    validates :familyname_furigana
   end
 end
