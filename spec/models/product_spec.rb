@@ -58,6 +58,11 @@ RSpec.describe Product, type: :model do
     @product.valid?
     expect(@product.errors.full_messages).to include("Money is not included in the list")
   end
+  it "価格の範囲が¥9,999,999以上だと登録できない" do
+    @product.money = 10000000
+    @product.valid?
+    expect(@product.errors.full_messages).to include("Money is not included in the list")
+  end
   it "販売価格は半角数字のみ入力可能である" do
     @product.money = "５０００"
     @product.valid?
