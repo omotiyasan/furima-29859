@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2020_10_09_071453) do
     t.integer "daystoship_id", null: false
     t.integer "money", null: false
     t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
