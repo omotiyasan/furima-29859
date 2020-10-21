@@ -1,7 +1,10 @@
 class OrdersController < ApplicationController
   
-  def index
+  def index    
+    #1 || = A or B
+    #2 && = A and B
     @product = Product.find(params[:product_id])
+    redirect_to root_path if @product.order.present? || current_user.id == @product.user_id
     @order = UserOrder.new
   end
 
