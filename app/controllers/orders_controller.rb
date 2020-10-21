@@ -1,15 +1,12 @@
 class OrdersController < ApplicationController
-  
+  before_action :set_order, only: [:index, :create]
+
   def index    
-    #1 || = A or B
-    #2 && = A and B
-    @product = Product.find(params[:product_id])
     redirect_to root_path if @product.order.present? || current_user.id == @product.user_id
     @order = UserOrder.new
   end
 
   def create
-    @product = Product.find(params[:product_id])
     @order = UserOrder.new(order_params)
     if @order.valid?
       pay_item
@@ -34,5 +31,9 @@ class OrdersController < ApplicationController
       card: order_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def set_order
+    @product = Product.find(params[:product_id])
   end
 end

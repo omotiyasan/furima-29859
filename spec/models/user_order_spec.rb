@@ -39,6 +39,11 @@ RSpec.describe UserOrder, type: :model do
     expect(@user_order.errors.full_messages).to include("Municipality can't be blank")
   end
 
+  it "building_nameが空でも登録できる" do
+    @user_order.building_name = nil
+    expect(@user_order).to be_valid
+  end
+
   it "blockが空だと登録できない" do
     @user_order.block = nil
     @user_order.valid?
