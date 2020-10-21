@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :salesarea
   belongs_to_active_hash :daystoship
 
-  has_one :buy
+  has_one :order
   has_one_attached :image
   belongs_to :user
 
