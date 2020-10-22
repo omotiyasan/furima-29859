@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :set_order, only: [:index, :create]
 
   def index    
-    redirect_to root_path if @product.order.present? || current_user.id == @product.user_id
+    redirect_to user_session_path if @product.order.present? || current_user.id == @product.user_id
     @order = UserOrder.new
   end
 
