@@ -70,3 +70,5 @@ gem 'pry-rails'
 gem 'mini_magick'
 
 gem 'payjp'
+
+gem "aws-sdk-s3", require: false
